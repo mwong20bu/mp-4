@@ -4,22 +4,23 @@ import { useParams } from "next/navigation";
 import useSWR from "swr";
 import WeatherCard from "@/components/weatherCard";
 import styled from "styled-components";
-import {Weather} from "@/types"
+import {Weather} from "@/app/interfaces/weather";
 
 const WeatherContentWrapper = styled.main`
     width: 80vw;
     margin: auto;
-    background-color: aquamarine;
+    background-color: lightblue;
 `;
 
 const CityName = styled.h1`
-    color: blueviolet;
+    color: navy;
+    text-align: center;
 `;
 
 const WeatherCardsContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
-    border: gold 5px solid;
+    border: mediumblue 5px solid;
 `;
 
 export default function CityPage(){
@@ -29,7 +30,7 @@ export default function CityPage(){
     );
 
     if (error) return <div>Failed to load</div>;
-    if (data) return <div>Loading...</div>;
+    if (!data) return <div>Loading...</div>;
 
     const days = data?.days || [];
 
@@ -39,16 +40,16 @@ export default function CityPage(){
             <WeatherCardsContainer>
                 {
                     days.map((weather: Weather, i: number) =>
-                    (
-                        <WeatherCard
-                            key={i}
-                            datetime={weather.datetime}
-                            conditions={weather.conditions}
-                            description={weather.description}
-                            tempmin={weather.tempmin}
-                            tempmax={weather.tempmax}
-                        />
-                    )
+                        (
+                            <WeatherCard
+                                key={i}
+                                datetime={weather.datetime}
+                                conditions={weather.conditions}
+                                description={weather.description}
+                                tempmin={weather.tempmin}
+                                tempmax={weather.tempmax}
+                            />
+                        )
                     )
                 }
             </WeatherCardsContainer>
