@@ -11,6 +11,7 @@ const WeatherCardWrapper = styled.div`
     margin: 1rem; 
     width: 200px; 
     border-radius: 10px;
+    font-family: Arial, sans-serif;
 `;
 
 export default function WeatherCard(props:Weather){

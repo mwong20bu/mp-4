@@ -15,6 +15,7 @@ const WeatherContentWrapper = styled.main`
 const CityName = styled.h1`
     color: navy;
     text-align: center;
+    font-family: Arial, sans-serif;
 `;
 
 const WeatherCardsContainer = styled.div`

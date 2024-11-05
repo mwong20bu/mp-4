@@ -9,6 +9,7 @@ const StyledDiv=styled.div`
     align-items: center;
     background-color: lightblue;
     color: navy;
+    font-family: Arial, sans-serif;
 `
 
 export default function Home(){
