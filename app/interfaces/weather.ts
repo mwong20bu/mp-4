@@ -1,7 +1,7 @@
 export type Weather = {
     tempmin: number,
     tempmax: number,
-    datetime: any,
+    datetime: string,
     description: string, 
     conditions: string,
 };
